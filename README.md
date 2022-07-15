@@ -1,6 +1,6 @@
-# Zabbix Agent Deployer
+# Zabbix Agent Deployer (ZAD)
   
-This set of scripts was developed and tested with the aim of facilitating the deployment and updating of Zabbix agents in large environments. Also called ZAD, Zabbix Agent Deployer is a FOSS that hopes to help everyone and get better and better with time.
+This set of scripts was developed and tested with the aim of facilitating the deployment and updating of Zabbix Agents in large environments. Also called ZAD, Zabbix Agent Deployer is a FOSS that hopes to help everyone and get better and better with time.
   
 ### Dependencies (self-managed)
   
@@ -9,7 +9,7 @@ This set of scripts was developed and tested with the aim of facilitating the de
 - [PsTools' PsExec](https://docs.microsoft.com/en-us/sysinternals/downloads/pstools)
 - [Uninstall](https://tarma.com/tools/uninstall)
   
-PsExec is the only one that is not included in this repository, due to PsTools license restrictions. I tried to get an authorization to distribute it from Mark Russinovich, but to no avail.  
+PsExec is the only one that is not included in this repository, due to PsTools license restrictions. I tried to get Mark Russinovich's authorization to distribute it, but to no avail.  
   
 ### Usage
   
@@ -17,7 +17,7 @@ The executor credential needs to have appropriate privileges on the ZAD base dir
   
 1. Run ***update-dependencies.bat*** or ***update-dependencies.ps1*** at least once to download and update dependencies (in this way the PsExec will be obtained)
 2. Get the Zabbix Agent MSI packages in the desired versions, save them in the ***pkg*** folder, replacing the current ones and reusing their names
-3. Edit lines 5 to 13 and/or 42 to 47 of the ***cfg\callback.bat*** to reflect your monitoring environment (Zabbix Agent 2 is also supported)
+3. Edit lines 5 to 13 and/or 42 to 47 of the ***cfg\callback.bat*** to reflect your monitoring environment (Zabbix Agent 2 is also supported - just change lines 5 and 6)
 4. Edit the ***cfg\servers.txt*** file to reference your monitored servers, one per line
 5. In recent and well-configured environments, execute ***run-with-psremoting.ps1***; On old or poorly configured environments, execute ***run-with-psexec.bat***
 6. Track progress through your monitoring or inventory system; In case of failure, send us the ***zad-install.log***, ***zad-uninstall.log*** and ***zad-control.log*** logs, present in ***C:\Windows\Temp*** of each failed server
@@ -27,8 +27,14 @@ The executor credential needs to have appropriate privileges on the ZAD base dir
   
 #### Probable future development
   
+- Autofetch desired Zabbix Agent package versions
 - Support for non-Windows operating systems (source and/or target)
-  
+
+#### v1.0.0.1: Updating packages and binaries (2022-07-15)
+
+- Updated Zabbix Agent from 6.0.2 LTS to 6.0.6 LTS
+- Updated dependencies to latest versions on 2022-07-15
+
 #### v1.0.0.0: First public release
   
 - Accompanied by 32-bit and 64-bit Zabbix Agent 6.0.2 LTS MSI packages
@@ -39,7 +45,7 @@ The executor credential needs to have appropriate privileges on the ZAD base dir
 - Tested support for Windows Server versions 2003 and 2008 with 32-bit and 64-bit x86 architecture
 - Tested support for Windows Server versions 2008 R2, 2012, 2012 R2, 2016, 2019 and 2022 with 64-bit x86 architecture
 - Tested with Brazilian and USA language and regional settings
-- Tested with the latest Zabbix Agent MSI packages of all major versions from 3.0.32 LTS to 6.0.2 LTS
+- Tested with the latest Zabbix Agent MSI packages of all major versions from 3.x.x LTS to 6.x.x LTS
   
 ### License, credits, feedback and donation
   
