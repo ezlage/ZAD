@@ -28,6 +28,7 @@ The executor credential needs to have appropriate privileges on the ZAD base dir
 #### Probable future development
   
 - Autofetch desired Zabbix Agent package versions
+- Support for multiple environment configurations
 - Support for non-Windows operating systems (source and/or target)
 
 #### v1.0.0.1: Updating packages and binaries (2022-07-15)
