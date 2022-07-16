@@ -94,6 +94,7 @@ IF EXIST "bin\curl.exe" (
 GOTO :EOF
 
 :END
+REM === Issuing the last notice ===
 ECHO.
 ECHO ----------------------------------^> Done.
 ECHO.

@@ -30,6 +30,7 @@ FOR /F "USEBACKQ TOKENS=*" %%I IN ("cfg\servers.txt") DO (
   ECHO !STATUS!^^!
 )
 
+REM === Issuing the last notice ===
 ECHO.
 ECHO ----------------------------------^> Done.
 ECHO.
