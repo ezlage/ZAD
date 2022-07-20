@@ -2,7 +2,7 @@
 CLS
 
 REM === Environment-specific parameters ===
-REM "SET AGENTNAME=Zabbix Agent 2"
+REM SET "AGENTNAME=Zabbix Agent 2"
 SET "AGENTNAME=Zabbix Agent"
 SET "SERVER=127.0.0.1"
 SET "SERVERACTIVE=127.0.0.1"
