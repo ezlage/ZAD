@@ -19,7 +19,7 @@ Set-Location $CurPath;
 # === Starting the work ===
 Write-Host "Deploying the Zabbix Agent...";
 Write-Host;
-[string[]] $Servers = Get-Content -Path '.\servers.txt';
+[string[]] $Servers = Get-Content -Path 'cfg\servers.txt';
 ForEach ($Server in $Servers) {    
   Try {
     Copy-Item -Path "pkg\zabbixagent32.msi" -Destination "\\$($Server)\C$\Windows\Temp" -Force;
