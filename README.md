@@ -31,12 +31,17 @@ The executor credential needs to have appropriate privileges on the ZAD base dir
 - Support for multiple environment configurations
 - Support for non-Windows operating systems (source and/or target)
 
+#### v1.0.0.2: Fix on run-with-psremoting.ps1 and callback.bat (2022-07-20)
+
+- Fix for a reference to cfg\servers.txt (run-with-psremoting.ps1)
+- Fix for Zabbix Agent 2 comment (cfg\callback.bat)
+
 #### v1.0.0.1: Updating packages and binaries (2022-07-15)
 
 - Updated Zabbix Agent from 6.0.2 LTS to 6.0.6 LTS
 - Updated dependencies to latest versions on 2022-07-15
 
-#### v1.0.0.0: First public release
+#### v1.0.0.0: First public release (2022-04-03)
   
 - Accompanied by 32-bit and 64-bit Zabbix Agent 6.0.2 LTS MSI packages
 - Self-managed dependencies
