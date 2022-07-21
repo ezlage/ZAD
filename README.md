@@ -31,7 +31,11 @@ The executor credential needs to have appropriate privileges on the ZAD base dir
 - Support for multiple environment configurations
 - Support for non-Windows operating systems (source and/or target)
 
-#### v1.0.0.2: Fix on run-with-psremoting.ps1 and callback.bat (2022-07-20)
+#### v1.0.0.3: One more change in run-with-psremoting.ps1 (2022-07-20)
+
+- Handling for empty lines, leading and trailing spaces (run-with-psremoting.ps1)
+
+#### v1.0.0.2: Fix in run-with-psremoting.ps1 and callback.bat (2022-07-20)
 
 - Fix for a reference to cfg\servers.txt (run-with-psremoting.ps1)
 - Fix for Zabbix Agent 2 comment (cfg\callback.bat)
