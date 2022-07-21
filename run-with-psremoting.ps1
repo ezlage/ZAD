@@ -21,17 +21,20 @@ Write-Host "Deploying the Zabbix Agent...";
 Write-Host;
 [string[]] $Servers = Get-Content -Path 'cfg\servers.txt';
 ForEach ($Server in $Servers) {    
-  Try {
-    Copy-Item -Path "pkg\zabbixagent32.msi" -Destination "\\$($Server)\C$\Windows\Temp" -Force;
-    Copy-Item -Path "pkg\zabbixagent64.msi" -Destination "\\$($Server)\C$\Windows\Temp" -Force;
-    Copy-Item -Path "bin\uninstall.exe" -Destination "\\$($Server)\C$\Windows\Temp" -Force;
-    Copy-Item -Path "cfg\callback.bat" -Destination "\\$($Server)\C$\Windows\Temp\zad-callback.bat" -Force;
-    Invoke-Command -ComputerName $Server -AsJob -ScriptBlock {      
-      Start-Process -FilePath zad-callback.bat -WorkingDirectory "C:\Windows\Temp" -Wait -ErrorAction Continue;      
-    } | Out-Null;
-    Write-Host $Server -ForegroundColor Green;
-  } Catch {
-    Write-Host $Server -ForegroundColor Red;
+  $Server = $Server.Trim();
+  If (![string]::IsNullOrEmpty($Server)) {
+    Try {    
+      Copy-Item -Path "pkg\zabbixagent32.msi" -Destination "\\$($Server)\C$\Windows\Temp" -Force;
+      Copy-Item -Path "pkg\zabbixagent64.msi" -Destination "\\$($Server)\C$\Windows\Temp" -Force;
+      Copy-Item -Path "bin\uninstall.exe" -Destination "\\$($Server)\C$\Windows\Temp" -Force;
+      Copy-Item -Path "cfg\callback.bat" -Destination "\\$($Server)\C$\Windows\Temp\zad-callback.bat" -Force;
+      Invoke-Command -ComputerName $Server -AsJob -ScriptBlock {      
+        Start-Process -FilePath zad-callback.bat -WorkingDirectory "C:\Windows\Temp" -Wait -ErrorAction Continue;      
+      } | Out-Null;
+      Write-Host $Server -ForegroundColor Green;    
+    } Catch {
+      Write-Host $Server -ForegroundColor Red;
+    }
   }
 }
 
