@@ -28,6 +28,8 @@
 > Actions taken but not yet versioned
 
 - Updated repository documentation (RMAP_CLOG.md)
+- Updated repository documentation (README.md)
+- Updated repository documentation (RMAP_CLOG.md)
 - Updated code comment (Start-PsRemoZad.ps1)
 - Updated code comment (Update-ZadDeps.ps1)
 
