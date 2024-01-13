@@ -10,7 +10,7 @@ Write-Host "= Material protected by a license (MIT) =";
 Write-Host "=========================================";
 Write-Host;
 
-# Changing the default action on error or warning
+# Changing the default action on error, warning or progress
 $EPref = $ErrorActionPreference;
 $WPref = $WarningPreference;
 $PPref = $ProgressPreference;
