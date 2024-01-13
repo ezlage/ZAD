@@ -27,7 +27,9 @@
 
 > Actions taken but not yet versioned
 
-- Nothing for now
+- Updated repository documentation (RMAP_CLOG.md)
+- Updated code comment (Start-PsRemoZad.ps1)
+- Updated code comment (Update-ZadDeps.ps1)
 
 ### [Untracked](#untracked)
 
