@@ -17,12 +17,13 @@ For licensing reasons, it was not possible to include PsExec in this repository.
 
 - On Windows (the only supported operating system for now)
 
-1. Run **Update-ZadDeps.ps1** or **Update-ZadDeps.bat** at least once to satisfy the requirements and dependencies
-2. Get the desired [32-bit and 64-bit packages of Zabbix Agent or Zabbix Agent 2](https://www.zabbix.com/download_agents), save them in the **pkg** folder, replacing the old ones and reusing their names
-3. The default settings target LTS releases of Zabbix Agent 2, so edit lines **4 to 9** and/or **42 to 46** of the **cfg\callback.bat** to reflect your monitoring environment
-4. Edit the **cfg\servers.txt** file to reference the servers that will receive the agent, one per line, without blank lines, tabulations or spaces
-5. Choose the script and run it! **Start-PsRemoZad.ps1** is expected to be faster than **Start-PsExecZad.bat**, so prefer to run the first one and, in cases where it fails, try the second one; Remember to remove successful servers from **cfg\servers.txt** before the next attempt
-6. Track progress through your monitoring or inventory system; In case of failure, please send us the logs **zad-install.log**, **zad-uninstall.log** and **zad-control.log**, present in **C:\Windows\Temp** of each failed server
+1. Clone the repository to ensure the binaries are healthy, as the ZIP format download does not include the LFS objects
+2. Run **Update-ZadDeps.ps1** or **Update-ZadDeps.bat** at least once to satisfy the requirements and dependencies
+3. Get the desired [32-bit and 64-bit packages of Zabbix Agent or Zabbix Agent 2](https://www.zabbix.com/download_agents), save them in the **pkg** folder, replacing the old ones and reusing their names
+4. The default settings target LTS releases of Zabbix Agent 2, so edit lines **4 to 9** and/or **42 to 46** of the **cfg\callback.bat** to reflect your monitoring environment
+5. Edit the **cfg\servers.txt** file to reference the servers that will receive the agent, one per line, without blank lines, tabulations or spaces
+6. Choose the script and run it! **Start-PsRemoZad.ps1** is expected to be faster than **Start-PsExecZad.bat**, so prefer to run the first one and, in cases where it fails, try the second one; Remember to remove successful servers from **cfg\servers.txt** before the next attempt
+7. Track progress through your monitoring or inventory system; In case of failure, please send us the logs **zad-install.log**, **zad-uninstall.log** and **zad-control.log**, present in **C:\Windows\Temp** of each failed server
 
 ## Roadmap and Changelog
 
