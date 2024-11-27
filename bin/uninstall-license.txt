@@ -1,0 +1,11 @@
+Terms of use
+
+This program is copyright © 1990-2020 Tarma Software Research Ltd.
+
+You may freely use this program for personal or internal business uses only. You may not incorporate the program either wholly or in part into any product or publication, or otherwise distribute the program without express written permission from Tarma Software Research Ltd. However, you may provide links to this program's web page.
+
+Tarma Software Research Ltd is not liable for errors or omissions in this program.
+
+No technical support is available for this free tool.
+
+For more information: https://tarma.com/tools/uninstall
